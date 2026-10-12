@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/API/" />
+  <Folder Name="/src/core/">
+    <Project Path="HR.Leave management system.Domain/HR.Leave management system.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/infrastructure/" />
+  <Folder Name="/src/UI/" />
+  <Folder Name="/test/" />
+</Solution>
