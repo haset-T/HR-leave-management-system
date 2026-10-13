@@ -2,6 +2,7 @@
   <Folder Name="/src/" />
   <Folder Name="/src/API/" />
   <Folder Name="/src/core/">
+    <Project Path="HR.Leave management system.Application/HR.Leave management system.Application.csproj" />
     <Project Path="HR.Leave management system.Domain/HR.Leave management system.Domain.csproj" />
   </Folder>
   <Folder Name="/src/infrastructure/" />
