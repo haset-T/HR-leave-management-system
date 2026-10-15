@@ -13,7 +13,7 @@ namespace HR.Leave_management_system.Domain
         public int LeaveTypeId { get; set; }
         public DateTime DateRequested { get; set; }
         public string RequestComments { get; set; }
-        public DateTime DateActioned { get; set; }
+        public DateTime? DateActioned { get; set; }
         public bool? Approved { get; set; }
         public bool cancelled { get; set; }
     }

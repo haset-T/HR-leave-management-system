@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HR.Leave_management_system.Application.Features.LeaveAllocations.Handlers.Queries
 {
-    internal class GetLeaveAllocationListRequest
+    internal class GetLeaveAllocationListRequestHandler
     {
     }
 }

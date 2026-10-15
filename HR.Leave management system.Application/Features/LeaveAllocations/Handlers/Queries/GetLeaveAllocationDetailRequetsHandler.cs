@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HR.Leave_management_system.Application.DTOs;
+using HR.Leave_management_system.Application.DTOs.LeaveAllocation;
 using HR.Leave_management_system.Application.Features.LeaveAllocations.Requests.Queries;
 using HR.Leave_management_system.Application.Persistence.Contracts;
 using MediatR;
@@ -15,7 +15,6 @@ namespace HR.Leave_management_system.Application.Features.LeaveAllocations.Handl
     {
         private readonly ILeaveAllocationRepository _leaveAllocationRepository;
         private readonly IMapper _mapper;
-
         public GetLeaveAllocationDetailRequetsHandler(ILeaveAllocationRepository leaveAllocationRepository, IMapper mapper)
         {
             _leaveAllocationRepository = leaveAllocationRepository;

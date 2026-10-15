@@ -1,10 +1,13 @@
-﻿using System;
+﻿using HR.Leave_management_system.Application.DTOs.LeaveRequest;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HR.Leave_management_system.Application.Features.LeaveRequests.Handlers.Queries
+namespace HR.Leave_management_system.Application.Features.LeaveRequests.Requests.Queries
 {
-    internal class GetLeaveRequestDetailRequest
+    public class GetLeaveRequestDetailRequest : IRequest<LeaveRequestDto>
     {
+        public int Id { get; set; }
     }
 }

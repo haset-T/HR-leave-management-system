@@ -1,10 +1,15 @@
-﻿using System;
+﻿using HR.Leave_management_system.Application.DTOs.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HR.Leave_management_system.Application.DTOs.LeaveRequest
 {
-    internal class CreateLeaveRequestDto
+    public class CreateLeaveRequestDto : ILeaveRequestDto
     {
+        public DateTime StartDate {  get; set; }
+        public DateTime EndDate { get; set; }
+        public int LeaveTypeId { get; set; }
+        public string RequestComments {  get; set; }
     }
 }
