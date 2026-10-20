@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using HR.Leave_management_system.Application.DTOs.LeaveType.Validators;
+using HR.Leave_management_system.Application.Execeptions;
 using HR.Leave_management_system.Application.Features.LeaveTypes.Requests.Commands;
 using HR.Leave_management_system.Application.Persistence.Contracts;
 using MediatR;
@@ -22,6 +24,13 @@ namespace HR.Leave_management_system.Application.Features.LeaveTypes.Handlers.Co
         }
         public async Task <Unit> Handle(UpdateLeaveTypeCommand request, CancellationToken cancellationToken)
         {
+            var validator = new UpdateLeaveTypeDtoValidator();
+            var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
+
+            if (validationResult.IsValid == false)
+            {
+                throw new ValidationException(validationResult);
+            }
             var leaveType = _leaveTypeRepository.Get(request.LeaveTypeDto .Id);
 
             _mapper.Map(request.LeaveTypeDto, leaveType);

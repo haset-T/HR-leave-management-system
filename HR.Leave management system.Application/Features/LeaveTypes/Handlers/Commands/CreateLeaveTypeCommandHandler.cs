@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using HR.Leave_management_system.Application.DTOs.LeaveType.Validators;
+using HR.Leave_management_system.Application.Execeptions;
 using HR.Leave_management_system.Application.Features.LeaveTypes.Requests.Commands;
 using HR.Leave_management_system.Application.Persistence.Contracts;
 using HR.Leave_management_system.Domain;
@@ -30,7 +31,9 @@ namespace HR.Leave_management_system.Application.Features.LeaveTypes.Handlers.Co
             var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
 
             if (validationResult.IsValid == false)
-                throw new Exception();
+            {
+                throw new Execeptions.ValidationException(validationResult);
+            }
 
             var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);
 

@@ -8,6 +8,6 @@ namespace HR.Leave_management_system.Application.Features.LeaveAllocations.Reque
 {
     public class CreateLeaveAllocationCommand :IRequest<int>
     {
-        public CreateLeaveAllocationDto LeaveAllocation { get; set; }
+        public CreateLeaveAllocationDto LeaveAllocationDto { get; set; }
     }
 }
