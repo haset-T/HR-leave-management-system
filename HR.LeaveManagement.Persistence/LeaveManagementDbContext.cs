@@ -22,6 +22,8 @@ namespace HR.LeaveManagement.Persistence
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
+            
+           
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
