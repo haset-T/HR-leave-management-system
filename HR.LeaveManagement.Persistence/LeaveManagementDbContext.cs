@@ -1,4 +1,5 @@
 ﻿using HR.Leave_management_system.Domain;
+using HR.Leave_management_system.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,20 @@ namespace HR.LeaveManagement.Persistence
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
+            foreach (var entry in ChangeTracker.Entries<BaseDomainEntity>())
+            {
+                entry.Entity.LastModifiedDate = DateTime.Now;
+
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Entity.DateCreated = DateTime.Now;
+                }
+            }
+                return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
             
-           
-            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
-        public DbSet<LeaveType> LeaveType { get; set; }
-        public DbSet<LeaveAllocation> LeaveAllocation { get; set; }
+        public DbSet<LeaveType> LeaveTypes { get; set; }
+        public DbSet<LeaveAllocation> LeaveAllocations { get; set; }
     }
 }

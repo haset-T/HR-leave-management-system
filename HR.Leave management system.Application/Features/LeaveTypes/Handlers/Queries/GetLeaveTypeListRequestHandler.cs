@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using HR.Leave_management_system.Application.DTOs.LeaveType;
 using HR.Leave_management_system.Application.Features.LeaveTypes.Requests.Queries;
-using HR.Leave_management_system.Application.Persistence.Contracts;
+using HR.Leave_management_system.Application.Contracts.Persistence;
 using MediatR;
 using System;
 using System.Collections.Generic;
